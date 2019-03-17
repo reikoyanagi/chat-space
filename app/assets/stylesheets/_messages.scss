@@ -18,7 +18,7 @@
     width:300px;
 
     &__user-name{
-      @include side-bar(#FFFFFF);
+      @include side-bar($chat);
       float: left;
       font-size:16px;
       line-height:100px;
@@ -39,12 +39,12 @@
   }
 
   &__group-title1{
-    @include side-bar(#FFFFFF);
+    @include side-bar($chat);
     font-size:15px;
     padding-top:20px;
   }
   &__group-comment1{
-    @include side-bar(#FFFFFF);
+    @include side-bar($chat);
     font-size:11px;
     padding-top:5px;
   }
@@ -54,7 +54,7 @@
 
 
 .header {
-  border-bottom:thin solid #eeeeee;
+  border-bottom:thin solid $space;
   clear:both;
   display: inline-block;
   height:100px;
@@ -73,8 +73,8 @@
     padding-top: 15px;
   }
   button.edit{
-    border: thin solid #38AEF0;
-    color: #38AEF0;
+    border: thin solid $bottun-color;
+    color: $bottun-color;
     font-size: 15px;
     line-height: 40px;
     padding-left:20px;
@@ -88,7 +88,7 @@
 
 
 .message-list{
-  background-color: #fafafa;
+  background-color: $space-color;
   float:right;
   height: calc(100vh - 190px);
   width: calc(100vw - 300px);
@@ -116,13 +116,13 @@
 
 
 .input-message{
-  background-color: #eeeeee;
+  background-color: $space;
   float:right;
   height: 90px;
   position: relative;
   width: calc(100vw - 300px);
   &__input{
-    background-color: #FFFFFF;
+    background-color: $chat;
     height: 50px;
     left: 40px;
     position: absolute;
@@ -145,8 +145,8 @@
    }
   }
   button.send{
-    background-color: #38AEF0;
-    color:#FFFFFF;
+    background-color: $bottun-color;
+    color:$chat;
     font-size: 15px;
     height: 50px;
     position: absolute;
