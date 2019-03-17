@@ -1,0 +1,160 @@
+@import "variable";
+@mixin side-bar($color){
+   color:($color);
+   font-weight: bold;
+   padding-left:20px;
+}
+
+.side-bar {
+  background-color: #2f3e51;
+  clear:both;
+  float:left;
+  height: 100vh;
+  width:300px;
+
+  &__top {
+    background-color: #253141;
+    height:100px;
+    width:300px;
+
+    &__user-name{
+      @include side-bar($chat);
+      float: left;
+      font-size:16px;
+      line-height:100px;
+    }
+
+    &__fa1{
+     color: white;
+     float: right;
+     line-height:100px;
+     padding-right:20px;
+    }
+    &__fa2{
+     color: white;
+     float: right;
+     line-height:100px;
+
+    }
+  }
+
+  &__group-title1{
+    @include side-bar($chat);
+    font-size:15px;
+    padding-top:20px;
+  }
+  &__group-comment1{
+    @include side-bar($chat);
+    font-size:11px;
+    padding-top:5px;
+  }
+}
+
+
+
+
+.header {
+  border-bottom:thin solid $space;
+  clear:both;
+  display: inline-block;
+  height:100px;
+  width: calc(100vw - 300px);
+  &__group-title1 {
+    color: #333333;
+    display: inline-block;
+    font-size: 20px;
+    padding-left: 40px;
+    padding-top: 35px;
+    }
+  &__group-members1 {
+    color: $chat-color;
+    font-size: 10px;
+    padding-left: 40px;
+    padding-top: 15px;
+  }
+  button.edit{
+    border: thin solid $bottun-color;
+    color: $bottun-color;
+    font-size: 15px;
+    line-height: 40px;
+    padding-left:20px;
+    padding-right: 20px;
+    position: absolute;
+    right:40px;
+    top: 28px;
+  }
+}
+
+
+
+.message-list{
+  background-color: $space-color;
+  float:right;
+  height: calc(100vh - 190px);
+  width: calc(100vw - 300px);
+  &__membername1{
+    color: #333333;
+    float:left;
+    padding-left:40px;
+    padding-top:46px;
+  }
+  &__created-at{
+    color: $chat-color;
+    float:left;
+    font-size:12px;
+    padding-left:10px;
+    padding-top:46px;
+  }
+  &__message1{
+    clear:both;
+    font-size: 12px;
+    padding-left:40px;
+    padding-top:10px;
+  }
+}
+
+
+
+.input-message{
+  background-color: $space;
+  float:right;
+  height: 90px;
+  position: relative;
+  width: calc(100vw - 300px);
+  &__input{
+    background-color: $chat;
+    height: 50px;
+    left: 40px;
+    position: absolute;
+    top: 20px;
+    width: calc(100vw - 495px);
+  }
+    &__input-placeholder{
+    color: $chat-color;
+    left: 40px;
+    line-height: 50px;
+    padding-left: 10px;
+    position: absolute;
+    top: 20px;
+    }
+   &__input-image{
+    line-height: 90px;
+    position: absolute;
+    right: 165px;
+    color: black;
+   }
+  }
+  button.send{
+    background-color: $bottun-color;
+    color:$chat;
+    font-size: 15px;
+    height: 50px;
+    position: absolute;
+    right:40px;
+    top: 20px;
+    width: 100px;
+  }
+
+
+
+

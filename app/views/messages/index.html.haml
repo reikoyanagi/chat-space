@@ -1,0 +1,9 @@
+.side-bar
+  .side-bar__top
+    .side-bar__top__user-name test
+    %a.side-bar__top__fa1{ :href => 'http://google.co.jp', :id => 'anchor1' }#{fa_icon 'cog'}
+    %a.side-bar__top__fa2{ :href => 'http://google.co.jp', :id => 'anchor2' }#{fa_icon 'edit'}
+  .side-bar__group-title1 sample
+  .side-bar__group-comment1 Good bye world!
+
+= render :partial => "message"
