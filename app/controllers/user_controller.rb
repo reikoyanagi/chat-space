@@ -1,5 +1,8 @@
 class UserController < ApplicationController
 
+  def index
+  end
+
   def edit
     if current_user.update(user_params)
       redirect_to root_path
@@ -7,6 +10,10 @@ class UserController < ApplicationController
       render :edit
     end
   end
+
+  def update
+  end
+
 
   private
 
