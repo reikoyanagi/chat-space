@@ -1,0 +1,51 @@
+@mixin side-bar($color){
+   color:($color);
+   font-weight: bold;
+   padding-left:20px;
+}
+
+
+.side-bar {
+  background-color: #2f3e51;
+  clear:both;
+  float:left;
+  height: 100vh;
+  width:300px;
+
+  &__top {
+    background-color: #253141;
+    height:100px;
+    width:300px;
+
+    &__user-name{
+      @include side-bar($chat);
+      float: left;
+      font-size:16px;
+      line-height:100px;
+    }
+
+    &__fa1{
+     color: white;
+     float: right;
+     line-height:100px;
+     padding-right:20px;
+    }
+    &__fa2{
+     color: white;
+     float: right;
+     line-height:100px;
+
+    }
+  }
+
+  &__group-title1{
+    @include side-bar($chat);
+    font-size:15px;
+    padding-top:20px;
+  }
+  &__group-comment1{
+    @include side-bar($chat);
+    font-size:11px;
+    padding-top:5px;
+  }
+}
