@@ -1,51 +1,46 @@
-@mixin side-bar($color){
-   color:($color);
-   font-weight: bold;
-   padding-left:20px;
-}
-
-
 .side-bar {
-  background-color: #2f3e51;
-  clear:both;
-  float:left;
-  height: 100vh;
-  width:300px;
-
-  &__top {
-    background-color: #253141;
-    height:100px;
-    width:300px;
-
-    &__user-name{
-      @include side-bar($chat);
-      float: left;
-      font-size:16px;
-      line-height:100px;
+  box-sizing: border-box;
+  color: $white;
+  width: 300px;
+  .header {
+    background-color: $side_blue_dark;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    &__name {
+      display: inline-block;
+      font-size: $side_header_font;
+      font-weight: bold;
     }
-
-    &__fa1{
-     color: white;
-     float: right;
-     line-height:100px;
-     padding-right:20px;
-    }
-    &__fa2{
-     color: white;
-     float: right;
-     line-height:100px;
-
+    &__lists {
+      display: inline-block;
+      float: right;
+      .list {
+        display: inline-block;
+      }
+      .icon {
+        color: $white;
+        font-size: $side_header_font;
+      }
     }
   }
 
-  &__group-title1{
-    @include side-bar($chat);
-    font-size:15px;
-    padding-top:20px;
-  }
-  &__group-comment1{
-    @include side-bar($chat);
-    font-size:11px;
-    padding-top:5px;
+  .groups {
+    background-color: $side_blue_light;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name {
+        color: $white;
+        font-size: $side_group_name;
+      }
+      &__message {
+        color: $white;
+        font-size: $side_group_message;
+        margin-top: 5px;
+      }
+    }
   }
 }
