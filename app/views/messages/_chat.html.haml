@@ -1,17 +1,33 @@
-.header
-  .header__group-title1 sample
-  .header__group-members1 Members: seo neko
-  %button.edit{:type => "edit"} Edit
+.chat
+  .header
+    .left-header
+      .left-header__title sample
+      .left-header__members Members: seo neko
+    .right-header
+      %button{:type => "edit"} Edit
 
 
-.message-list
-  .message-list__membername1 seo
-  .message-list__created-at 2016/09/21 06:15:55
-  .message-list__message1 Hello World!
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+        = @message.user.name
+        .upper-message__date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+      .lower-message
+        - if message.content.present?
+        .lower-message__content
+         = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 
-.input-message
-  .input-message__input{:type => "text"}
-  .input-message__input-placeholder type a message
-  %a.input-message__input-image{ :href => 'http://google.co.jp', :id => 'anchor3' }#{fa_icon 'image'}
-  %button.send{:type => "submit"} Send
+.form
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: '  type a message'
+    .form__mask
+      = f.label :image, class: 'form__mask__image' do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__submit'
+
+
