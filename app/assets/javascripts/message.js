@@ -14,7 +14,6 @@ $(function(){
                     ${message.text}
                     </p>
                     <img class="lower-message__image" src="${message.image}" alt="">
-
                   </div>
                 </div>`
     return html;
@@ -23,7 +22,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-    console.log(url);
     $.ajax({
       url: url,
       type: "POST",
@@ -36,6 +34,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.form__message').val('')
+      $('.new_message')[0].reset();
     })
     .fail(function(){
       alert('error');
