@@ -21,8 +21,9 @@
   .header
     .left-header
       .left-header__title
-        Sample_group
-      .left-header__members Members: seo neko
+      = @group.name
+      .left-header__members Members:
+
     .right-header
       %button{:type => "edit"} Edit
 .messages

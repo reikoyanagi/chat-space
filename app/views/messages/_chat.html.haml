@@ -1,8 +1,10 @@
 .chat
   .header
     .left-header
-      .left-header__title sample
-      .left-header__members Members: seo neko
+      .left-header__title
+      = @group.user.name
+      .left-header__members Members:
+       = @group.user.name
     .right-header
       %button{:type => "edit"} Edit
 

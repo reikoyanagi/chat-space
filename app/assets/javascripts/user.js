@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+
   var search_user = $("#user-search-result");
 
   function appendUser(user){
@@ -18,13 +19,13 @@ function searchErrMsgToHTML(msg) {
     search_user.append(html);
   }
 
-  function deleteUser(user){
+  function deleteUser(id,name){
     var html =`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                <input name='group[user_ids][]' type='hidden' value='${user.userId}'>
-                  <p class='chat-group-user__name'>${user.userName}</p>
+                <input name='group[user_ids][]' type='hidden' value='${id}'>
+                  <p class='chat-group-user__name'>${name}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
               </div>`
-   return html;
+  return html;
   }
     $("#user-search-field").on("keyup", function() {
       var input = $("#user-search-field").val();
@@ -50,13 +51,16 @@ function searchErrMsgToHTML(msg) {
       })
     });
     $("#user-search-result").on("click",".user-search-add", function() {
-      var data = $('a').data();
-      var html = deleteUser(data);
+      var result1 = $(this).attr("data-user-id");
+      var result2 = $(this).attr("data-user-name");
+
+      var html = deleteUser(result1, result2);
+
       $('#collection_check_boxes').append(html);
-        $("#user-search-result").remove();
+        $(this).parent().remove();
       });
     $("#collection_check_boxes").on("click",".user-search-remove", function() {
-      $("#collection_check_boxes").parent().remove();
+      $(this).parent().remove();
     })
 });
 
