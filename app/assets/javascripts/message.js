@@ -63,8 +63,6 @@ $(function() {
   .done(function(data){
     data.forEach(function(message){
     if (message.id > id) {
-      console.log(id)
-      console.log(message.id)
     insertHTML += buildHTML(message);
     }
   });
