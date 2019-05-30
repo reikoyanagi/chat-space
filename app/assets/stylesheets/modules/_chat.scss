@@ -33,8 +33,7 @@
       margin-top: 28px;
       padding: 0 20px;
       &__button {
-        color: $light_blue;
-        text-decoration: none;
+        color:$light_blue;
       }
     }
   }
@@ -49,30 +48,29 @@
     overflow: scroll;
   .message {
     .upper-message {
-        display: flex;
-        &__user-name {
-          color: $black;
-          font-size: 16px;
-          font-weight: bold;
-        }
-        &__date {
-          color: $light_gray;
-          font-size: 12px;
-          padding-left: 10px;
-        }
+      display: flex;
+      &__user-name {
+        color: $black;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        line-height: 24px;
+        color: $light_gray;
+        font-size: 12px;
+        padding-left: 10px;
       }
     }
   }
+}
   .lower-message {
-        margin-top: 10px;
-        &__content {
-          color: $black;
-          font-size: 14px;
-          margin-bottom: 40px;
-        }
-      }
-
-
+    &__content {
+      color: $black;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+  }
 
 .form {
     float:right;
@@ -81,45 +79,42 @@
     height: 90px;
     width: calc(100vw - 300px);
     position: relative;
-
-    &__message {
-      border: none;
-      position: absolute;
-      top: 20px;
-      left: 40px;
-      height: 50px;
-      width: calc(100vw - 495px);
-    }
-    &__mask {
-      height: 90px;
-      width: calc(100vw - 300px);
-      float:right;
-    }
-    .image2 {
-        position: absolute;
-        right: 165px;
-        font-size: 20px;
-        line-height: 90px;
-        // .image2{
-        //   position: absolute;
-
-        // }
-      }
-    .hidden {
-        display: none;
-      }
-    &__submit {
-      position: absolute;
-      right:40px;
-      top: 20px;
-      background-color: $light_blue;
-      border: none;
-      color: $white;
-      float: right;
-      font-size: 16px;
-      height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
-    }
+  &__message {
+    border: none;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    height: 50px;
+    width: calc(100vw - 495px);
   }
-
+  &__mask {
+    height: 90px;
+    width: calc(100vw - 300px);
+    float:right;
+  }
+  .image2 {
+    position: absolute;
+    right: 165px;
+    font-size: 20px;
+    line-height: 90px;
+  }
+  .hidden {
+    display: none;
+  }
+  &__submit {
+    position: absolute;
+    right:40px;
+    top: 20px;
+    background-color: $light_blue;
+    border: none;
+    color: $white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}
+a{
+  text-decoration: none;
+}

@@ -22,10 +22,14 @@
     .left-header
       .left-header__title
       = @group.name
-      .left-header__members Members:
+      .left-header__members
+        Members:
+        - @group.users.each do |user|
+          = user.name
 
     .right-header
-      %button{:type => "edit"} Edit
+      = link_to edit_group_path(@group.id) do
+        .right-header__button Edit
 .messages
   = render @messages
 
